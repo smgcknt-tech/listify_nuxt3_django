@@ -1,3 +1,3 @@
 <template>
-  <div>hello world !!!</div>
+  <div><v-btn depressed color="red">hello world</v-btn></div>
 </template>
