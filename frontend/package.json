@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "scripts": {
+    "local": "env ENV=local nuxi dev",
+    "dev": "env ENV=develop nuxi dev",
+    "type": "npx nuxi typecheck",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-config-typescript": "^8.0.0",
+    "@typescript-eslint/eslint-plugin": "^5.10.0",
+    "@typescript-eslint/parser": "^5.10.0",
+    "eslint": "^8.7.0",
+    "eslint-plugin-vue": "^8.3.0",
+    "fibers": "^5.0.1",
+    "nuxt3": "latest",
+    "sass": "^1.48.0",
+    "sass-loader": "^10.2.1",
+    "typescript": "^4.5.4",
+    "vuetify": "^3.0.0-alpha.11"
+  }
+}

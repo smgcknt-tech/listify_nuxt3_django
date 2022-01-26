@@ -1,0 +1,7 @@
+Django==3.2
+djangorestframework
+gunicorn
+psycopg2-binary
+django-environ
+django-filter
+black

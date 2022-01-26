@@ -1,0 +1,79 @@
+version: "3.8"
+services:
+  db:
+    container_name: db
+    image: postgres:13-alpine
+    environment:
+      - TZ=Asia/Tokyo
+      - PGTZ=Asia/Tokyo
+      - POSTGRES_DB=${DATABASE_DB}
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    tty: true
+    stdin_open: true
+
+  web:
+    container_name: web
+    build: 
+      context: ./nginx_conf
+      args:
+        - UID=${UID}
+        - GID=${GID}
+    ports:
+      - 5013:5013
+    volumes:
+      - static:/code/static_root
+      - media:/code/media
+    depends_on:
+      - backend
+      - frontend
+      - db
+    tty: true
+    stdin_open: true
+    user: ${UID}:${GID}
+
+  backend:
+    container_name: back
+    build: 
+      context: ./backend
+      args:
+        - UID=${UID}
+        - GID=${GID} 
+    command: 'sh /code/devstart.sh'
+    expose:
+      - "8000"
+    depends_on:
+      - db
+    environment:
+      - DJANGO_READ_ENV_FILE=true
+    volumes:
+      - ./backend:/code
+      - static:/code/static_root
+      - media:/code/media
+    tty: true
+    stdin_open: true
+    user: ${UID}:${GID}
+
+  frontend:
+    container_name: front
+    build:
+      context: ./frontend
+    expose:
+      - "3000"
+    ports:
+      - "24678:24678"
+    command: 'sh /code/devstart.sh'
+    volumes:
+      - ./frontend:/code
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    tty: true
+    stdin_open: true
+    user: ${UID}:${GID}
+
+volumes:
+  static:
+  media:
+  pgdata:
