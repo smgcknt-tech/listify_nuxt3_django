@@ -3,13 +3,10 @@ import confs from "./runtimeConfig"
 
 export default defineNuxtConfig({
   css: ["@/assets/css/main.scss"],
+  publicRuntimeConfig: confs,
   build: {
-    transpile: ["vuetify"]
-  },
-  vite: {
-    define: {
-      "process.env.DEBUG": "false"
-    }
-  },
-  publicRuntimeConfig: confs
+    parallel: true,
+    cache: true,
+    hardSource: true
+  }
 })

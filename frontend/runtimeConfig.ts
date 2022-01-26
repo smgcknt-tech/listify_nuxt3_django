@@ -8,6 +8,7 @@ const confs = {
 // Use different name from .env file or you get error
 if (process.env.ENV === "develop") {
   confs.ApiUrl = process.env.API_URL
+  confs.NuxtApi = process.env.NUXT_API_URL
 }
 
 export default confs

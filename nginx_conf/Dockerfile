@@ -4,7 +4,7 @@ ARG UID
 ARG GID
 
 COPY nginx.conf /etc/nginx/nginx.conf
-COPY default.conf /etc/nginx/conf.d/default.conf
+COPY default/default.conf /etc/nginx/conf.d/default.conf
 
 RUN apk add tzdata && \
     cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \

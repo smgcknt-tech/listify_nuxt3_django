@@ -30,7 +30,7 @@
 
 ## Start (docker)
 
-### Start the development server on http://localhost:5013
+### Start the development server on http://localhost:4000
 
 - cd project root directory
 - $ docker-compose up --build
