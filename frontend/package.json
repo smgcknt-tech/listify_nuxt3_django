@@ -8,6 +8,7 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
+    "@mdi/font": "^6.5.95",
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
@@ -18,6 +19,6 @@
     "sass": "^1.48.0",
     "sass-loader": "^10.2.1",
     "typescript": "^4.5.4",
-    "vuetify": "^3.0.0-alpha.11"
+    "vuetify": "^3.0.0-alpha.12"
   }
 }
