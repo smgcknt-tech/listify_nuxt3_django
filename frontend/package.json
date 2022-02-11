@@ -8,17 +8,15 @@
     "start": "node .output/server/index.mjs"
   },
   "devDependencies": {
-    "@mdi/font": "^6.5.95",
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
     "esbuild": "^0.14.14",
     "eslint": "^8.7.0",
     "eslint-plugin-vue": "^8.3.0",
-    "nuxt3": "latest",
+    "nuxt3": "^3.0.0-27403901.b3e9cf6",
     "sass": "^1.48.0",
     "sass-loader": "^10.2.1",
-    "typescript": "^4.5.4",
-    "vuetify": "^3.0.0-alpha.12"
+    "typescript": "^4.5.4"
   }
 }

@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <MyComponent />
-  </div>
+  <div>hello</div>
 </template>
