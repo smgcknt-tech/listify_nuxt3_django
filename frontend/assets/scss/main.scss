@@ -1,4 +1,18 @@
-@import "variables";
-body{
-  margin:0;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  @include row;
+
+  li {
+    @include padding(0.3rem);
+  }
 }

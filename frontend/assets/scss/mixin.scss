@@ -1,0 +1,29 @@
+@import "variables.scss";
+
+@mixin background-color($color: $background) {
+  background-color: $color;
+}
+
+@mixin row() {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin row-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin padding($padding: 0.5rem) {
+  padding: $padding;
+}
+
+@mixin color($color: white) {
+  color: $color;
+}
+
+@mixin font-size($font-size: 1rem) {
+  font-size: $font-size;
+}
