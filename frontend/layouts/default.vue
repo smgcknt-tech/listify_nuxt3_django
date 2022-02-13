@@ -2,6 +2,7 @@
   <div id="app">
     <header>
       <Header />
+      <SideBar />
     </header>
     <main>
       <slot />

@@ -13,6 +13,6 @@ ul {
   @include row;
 
   li {
-    @include padding(0.2rem);
+    @include padding(0.3rem);
   }
 }

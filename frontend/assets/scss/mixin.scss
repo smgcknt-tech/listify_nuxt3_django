@@ -1,6 +1,6 @@
 @import "variables.scss";
 
-@mixin background-color($color:$background) {
+@mixin background-color($color: $background) {
   background-color: $color;
 }
 
@@ -10,11 +10,20 @@
   justify-content: flex-start;
 }
 
-@mixin padding($padding:0.5rem) {
+@mixin row-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin padding($padding: 0.5rem) {
   padding: $padding;
 }
 
-@mixin color($color:white) {
+@mixin color($color: white) {
   color: $color;
 }
 
+@mixin font-size($font-size: 1rem) {
+  font-size: $font-size;
+}
