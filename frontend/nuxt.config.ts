@@ -2,13 +2,17 @@ import { defineNuxtConfig } from "nuxt3"
 import confs from "./runtimeConfig"
 
 export default defineNuxtConfig({
-  css: ["@/assets/css/main.scss"],
-  build: {
-    transpile: ["vuetify"]
-  },
+  css: ["@/assets/scss/main.scss"],
+  modules: ["nuxtjs-mdi-font"],
   vite: {
-    define: {
-      "process.env.DEBUG": "false"
+    ssr: true,
+    css: {
+      preprocessorOptions: {
+        scss: {
+          sourceMap: true,
+          additionalData: `@import "@/assets/scss/mixin.scss"; @import "@/assets/scss/variables.scss";`
+        }
+      }
     }
   },
   publicRuntimeConfig: confs

@@ -16,16 +16,17 @@ services:
 
   web:
     container_name: web
-    build: 
+    build:
       context: ./nginx_conf
       args:
         - UID=${UID}
         - GID=${GID}
     ports:
-      - 5013:5013
+      - 4000:4000
     volumes:
       - static:/code/static_root
       - media:/code/media
+      - ./nginx_conf/default:/etc/nginx/conf.d
     depends_on:
       - backend
       - frontend
@@ -36,12 +37,12 @@ services:
 
   backend:
     container_name: back
-    build: 
+    build:
       context: ./backend
       args:
         - UID=${UID}
-        - GID=${GID} 
-    command: 'sh /code/devstart.sh'
+        - GID=${GID}
+    command: "sh /code/devstart.sh"
     expose:
       - "8000"
     depends_on:
@@ -64,7 +65,7 @@ services:
       - "3000"
     ports:
       - "24678:24678"
-    command: 'sh /code/devstart.sh'
+    command: "sh /code/devstart.sh"
     volumes:
       - ./frontend:/code
     environment:
