@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-from api.views import UserDetail, UserSignUp, UserLogin
+from api.views import UserDetail, UserSignUp, UserLogin, MenuCreate
 from rest_framework.authtoken import views
 # from django.contrib.auth import views as auth_views
 
@@ -24,4 +24,5 @@ urlpatterns = [
     path('user/signup', UserSignUp.as_view(), name='user-sign-up'),
     path('user/login', UserLogin.as_view(), name='user-login'),
     path('user/detail/<int:pk>', UserDetail.as_view(), name='user-detail'),
+    path('menu/new', MenuCreate.as_view(), name='menu-create')
 ]

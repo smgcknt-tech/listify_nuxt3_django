@@ -9,12 +9,16 @@ class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
         fields = '__all__'
-class MenuSerializer(serializers.ModelSerializer):
-    items = ItemSerializer(many=True)
-    class Meta:
-        model = Menu
-        fields = '__all__'
 class MenuItemSerializer(serializers.ModelSerializer):
+    item = serializers.SerializerMethodField('get_item')
     class Meta:
         model = Menu_Item
         fields = '__all__'
+    def get_item(self, menu_item):
+        return Menu_Item.objects.get(id=menu_item.id).item_id
+class MenuSerializer(serializers.ModelSerializer):
+    menu_items= MenuItemSerializer(many=True, read_only=True)
+    class Meta:
+        model = Menu
+        fields = '__all__'
+    
