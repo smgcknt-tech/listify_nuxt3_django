@@ -39,3 +39,13 @@
 
 - cd frontend
 - $ npm run type
+
+# UI design
+
+![スクリーンショット 2022-07-11 9 09 54](https://user-images.githubusercontent.com/98461070/178167676-4bd27893-ab79-48ad-a62b-ffdd6cb5afa3.png)
+
+# DB design
+
+![スクリーンショット 2022-07-11 9 03 04](https://user-images.githubusercontent.com/98461070/178167720-9ae06cdb-0b34-407d-b563-79c11ad5415d.png)
+
+
