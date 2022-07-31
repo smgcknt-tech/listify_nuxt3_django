@@ -1,4 +1,3 @@
-from tkinter import CASCADE
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser
 # from django.core.validators import MinValueValidator
@@ -29,6 +28,9 @@ class Item(CommonInfo):
     # name=models.CharField(max_length=50)
     unit_price= models.PositiveSmallIntegerField(default=0,help_text='min value is 0')
     user_id=models.ForeignKey(User, on_delete=models.CASCADE)
+
+    class Meta(CommonInfo.Meta):
+        constraints=[models.UniqueConstraint(fields=['name','user_id'], name='unique_item_per_user')]
 
 class Measurement_Unit(CommonInfo):
     # name=models.CharField(max_length=50)

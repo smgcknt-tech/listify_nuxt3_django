@@ -15,7 +15,7 @@ class MenuItemSerializer(serializers.ModelSerializer):
         model = Menu_Item
         fields = '__all__'
     def get_item(self, menu_item):
-        return Menu_Item.objects.get(id=menu_item.id).item_id
+        return ItemSerializer(menu_item.item_id).data
 class MenuSerializer(serializers.ModelSerializer):
     menu_items= MenuItemSerializer(many=True, read_only=True)
     class Meta:
